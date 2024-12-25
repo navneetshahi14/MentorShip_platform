@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests</title>
+    <link rel="stylesheet" href="/Frontend/assets/css/main.css">
+</head>
+<body>
+    <div class="profilecontainer">
+        <nav class="mainnav">
+            <h3>Mentorship Platform</h3>
+            <ul>
+                <li><a href="/Frontend/views/profile.html">Profile</a></li>
+                <li><a href="/Frontend/views/requests.html">Requests</a></li>
+                <li><a href="/Frontend/views/discovery.html">Discovery</a></li>
+            </ul>
+            <div class="logout_btn">
+                Logout
+            </div>
+        </nav>
+        
+        <!-- Request Main body -->
+        <div class="Requestmainbody">
+            <h2>Requests</h2>
+            <div class="allRequests">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>navneet.shahi2004@gmail.com</td>
+                            <td>
+                                <select name="Status" id="Status">
+                                    <option value="Approve">Approve</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="cancel">Cancel</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button>updateStatus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
+    <script src="/Frontend/assets/js/requests.js"></script>
+</body>
+</html>

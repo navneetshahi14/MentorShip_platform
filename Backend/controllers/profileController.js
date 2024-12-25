@@ -23,7 +23,7 @@ const getProfile = async (req, res) => {
   try {
     const profile = await profileModel.getProfileByUserId(userId);
     if (!profile) {
-      return res.status(404).json({ error: "Profile not found" });
+      return res.json({ error: "Profile not found" });
     }
     res.status(200).json(profile);
   } catch (err) {

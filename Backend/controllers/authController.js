@@ -14,7 +14,8 @@ const register = async (req,res) => {
 
         const result = await db.query(query,values)
         const user = result.rows[0]
-        res.status(201).json({message:"User Registered successfully",user})
+        const token = jwt.sign({userId:user.user_id},process.env.JWT_SECERT,{expiresIn:'1h'})
+        res.status(201).json({message:"User Registered successfully",token,email:user.email,userid:user.user_id})
     } catch (error) {
         console.error('Error registered user:',error)
         res.status(500).json({error:"User resgistration failed"})
@@ -37,9 +38,11 @@ const login = async(req,res) =>{
         if(!isPasswordValid){
             return res.status(401).json({error:"Invalid User Credentials"})
         }
+        console.log(user)
 
-        const token = jwt.sign({userId:user.user_id},process.env.JWT_SECERT,{expiresIn:'1h'})
-        res.status(200).json({message:"Login successful",token})
+        const token = jwt.sign({userId:user.user_id},process.env.JWT_SECERT,{expiresIn:'2d'})
+        console.log(token)
+        res.status(200).json({message:"Login successful",token,email,userid:user.user_id})
     } catch (error) {
         console.log('Error logging in:',error)
         res.status(500).json({error:'Login failed'})

@@ -5,12 +5,12 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const profileRoutes = express();
 
 
-profileRoutes.get('/', authMiddleware.authenticateToken, profileController.getProfile);
+profileRoutes.get('/:userId', authMiddleware.authenticateToken, profileController.getProfile);
 
-profileRoutes.post('/create', authMiddleware.authenticateToken, profileController.createProfile);
+profileRoutes.post('/create/:userId', authMiddleware.authenticateToken, profileController.createProfile);
 
-profileRoutes.post('/update', authMiddleware.authenticateToken, profileController.updateProfile);
+profileRoutes.post('/update/:userId', authMiddleware.authenticateToken, profileController.updateProfile);
 
-profileRoutes.delete('/', authMiddleware.authenticateToken, profileController.deleteProfile);
+profileRoutes.post('/delete/:userId', authMiddleware.authenticateToken, profileController.deleteProfile);
 
 module.exports = profileRoutes;

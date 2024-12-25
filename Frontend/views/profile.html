@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/Frontend/assets/css/main.css">
+</head>
+<body>
+    <div class="profilecontainer">
+        <nav class="mainnav">
+            <h3>Mentorship Platform</h3>
+            <ul>
+                <li><a href="/Frontend/views/profile.html">Profile</a></li>
+                <li><a href="/Frontend/views/requests.html">Requests</a></li>
+                <li><a href="/Frontend/views/discovery.html">Discovery</a></li>
+            </ul>
+            <div class="logout_btn">
+                Logout
+            </div>
+        </nav>
+        
+        <div class="profileModel" id="profileModel">
+            <div class="profileModelbox">
+                <h3 id="closebtn">X</h3>
+                <div class="input_box">
+                    <input type="text" name="userId" id="userId" placeholder="UserId" readonly>
+                </div>
+                <div class="input_box select_box">
+                    <label for="role">Role</label>
+                    <select name="role" id="role">
+                        <option value="mentor">Mentor</option>
+                        <option value="mentee">Mentee</option>
+                    </select>
+                </div>
+                <div class="input_box">
+                    <input type="text" name="skills" id="skills" placeholder="Skills">
+                </div>
+                <div class="input_box">
+                    <input type="text" name="interests" id="interests" placeholder="Interests">
+                </div>
+                <div class="input_box">
+                    <input type="text" name="bio" id="bio" placeholder="Bio">
+                </div>
+                <button class="profilebtn" id="profile_btn">UpdateProfile</button>
+            </div>
+        </div>
+
+        <div class="mainProfileBody">
+            <div class="blankBox">
+
+            </div>
+            <div class="detailBox">
+                <div class="details">
+                    Email: <span id="emaildetail"></span>
+                </div>
+                <div class="details">
+                    Skill: <span id="skillsdetail"></span>
+                </div>
+                <div class="details">
+                    Interest: <span id="interestdetail"></span>
+                </div>
+                <div class="details">
+                    Bio: <span id="biodetail"></span>
+                </div>
+                <div class="details">
+                    Role: <span id="roledetail"></span>
+                </div>
+            </div>
+            <div class="btnbox">
+                <button id="updatebtn">Update</button>
+
+                <button id="deletebtn">Delete</button>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
+    <script src="/Frontend/assets/js/profile.js"></script>
+</body>
+</html>

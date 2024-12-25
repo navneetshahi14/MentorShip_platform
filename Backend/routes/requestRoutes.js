@@ -9,6 +9,6 @@ requestRoutes.post('/', authMiddleware.authenticateToken, requestController.crea
 
 requestRoutes.get('/', authMiddleware.authenticateToken, requestController.getRequests);
 
-requestRoutes.put('/:requestId', authMiddleware.authenticateToken, requestController.updateRequestStatus);
+requestRoutes.post('/:requestId', authMiddleware.authenticateToken, requestController.updateRequestStatus);
 
 module.exports = requestRoutes;
